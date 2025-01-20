@@ -26,6 +26,6 @@ services:
         value: "https://your-backend-url.onrender.com"
 
 databases:
-  - name: chatbot_db
+  - name: learfree_db
     plan: free
     postgresVersion: 15
