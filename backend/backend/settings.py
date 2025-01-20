@@ -59,10 +59,10 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  
-    "http://127.0.0.1:3000",
+    
     "https://frontend-p102.onrender.com" ,
 ]
+CORS_ALLOW_METHODS = ["GET", "POST"]
 
 ROOT_URLCONF = 'backend.urls'
 
