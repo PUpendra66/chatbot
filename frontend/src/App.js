@@ -13,7 +13,10 @@ function App() {
         setMessages(newMessages);
 
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/send_message/", { message: input });
+            const response = await axios.post(
+                `${process.env.REACT_APP_API_URL}/api/send_message/`,
+                { message: input }
+            );
 
             setMessages([...newMessages, { sender: "Bot", text: response.data.bot_reply }]);
         } catch (error) {

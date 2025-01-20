@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-n7x33s8iwrfbiqbd(wg6-z_d4k8@^y(p3e416e-dq7akdn3ezi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['backend-4ts9.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'chatbot',
+    
 ]
 
 MIDDLEWARE = [
@@ -54,10 +56,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  
-    "http://127.0.0.1:3000",  
+    "http://127.0.0.1:3000",
+    "https://frontend-p102.onrender.com" ,
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -127,6 +131,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
