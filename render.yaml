@@ -26,6 +26,6 @@ services:
         value: "https://your-backend-url.onrender.com"
 
 databases:
-  - name: learfree_db
+  - name: learnfreedb
     plan: free
-    postgresVersion: 15
+    postgresVersion: 16
