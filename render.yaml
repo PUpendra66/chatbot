@@ -25,7 +25,7 @@ services:
       - key: REACT_APP_API_URL
         value: "https://your-backend-url.onrender.com"
 
-databases:
-  - name: learnfreedb
-    plan: free
-    postgresVersion: 16
+# databases:
+#   - name: learnfreedb
+#     plan: free
+#     postgresVersion: 16
