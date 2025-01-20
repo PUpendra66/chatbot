@@ -13,14 +13,22 @@ function App() {
         setMessages(newMessages);
 
         try {
+            console.log("Sending message to API:", input);
+            console.log("API URL:", process.env.REACT_APP_API_URL);
+
             const response = await axios.post(
                 `${process.env.REACT_APP_API_URL}/api/send_message/`,
                 { message: input }
             );
 
+            console.log("Received response:", response.data);
             setMessages([...newMessages, { sender: "Bot", text: response.data.bot_reply }]);
+
         } catch (error) {
-            console.error("Error sending message", error);
+            console.error("Error sending message:", error);
+            if (error.response) {
+                console.error("Server response:", error.response.data);
+            }
             alert("Sorry, something went wrong. Please try again later.");
         }
 
